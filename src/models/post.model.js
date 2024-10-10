@@ -3,18 +3,18 @@ import mongoose, { Schema, Types, model} from "mongoose";
 const postSchema = new Schema({
 
     tittle:{
-        Type: String,
-
+        type: String,
+        required: true
     },
 
     description:{
-        Type: String,
+        type: String,
         required: true,
     },
 
     imageURL:{
-        Type: String,
+        type: String,
     }
 })
 
-export const Post = mongoose.model("Post", postSchema)
+export default model("Post", postSchema)

@@ -1,17 +1,17 @@
-import {Schema, Model, Types} from "mongoose";
+import {Schema, Model, Types, model} from "mongoose";
 
 
 const favoriteSchema = new Schema ({
 
-    post:{
-        Type: Types.ObjectId,
+    postId:{
+        type: Types.ObjectId,
         ref: "Post"
     },
 
-    user:{
-        Type: Types.ObjectId,
+    userId:{
+        type: Types.ObjectId,
         ref: "User"
     }
 })
 
-export const Favorite = mongoose.model("Favorite", favoriteSchema)
+export default model("Favorite", favoriteSchema)
