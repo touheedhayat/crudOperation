@@ -9,6 +9,7 @@ export const authenticated = async (req, res, next) => {
         
         const decode = await JWT.decode(token)
         console.log(decode)
+      
         if(!decode){
             return next({})   
         } 
